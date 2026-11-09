@@ -20,17 +20,17 @@ export default class CloudBridgePlugin extends Plugin {
 		this.setStatus("·");
 
 		this.addRibbonIcon("cloud", "CloudBridge: sync now",
-			() => this.sync.run("manual"));
+			() => void this.sync.run("manual"));
 
 		this.addCommand({
-			id: "cloudbridge-sync",
+			id: "sync-vault",
 			name: "Sync vault now",
-			callback: () => this.sync.run("manual"),
+			callback: () => void this.sync.run("manual"),
 		});
 		this.addCommand({
-			id: "cloudbridge-upload-attachments",
+			id: "upload-attachments",
 			name: "Upload note attachments to cloud",
-			callback: () => uploadNoteAttachments(this),
+			callback: () => void uploadNoteAttachments(this),
 		});
 
 		if (this.settings.syncOnSave) {
@@ -57,7 +57,7 @@ export default class CloudBridgePlugin extends Plugin {
 		if (this.debounce !== null) window.clearTimeout(this.debounce);
 		this.debounce = window.setTimeout(() => {
 			this.debounce = null;
-			this.sync.run("auto");
+			void this.sync.run("auto");
 		}, 8_000);
 	}
 
@@ -66,8 +66,8 @@ export default class CloudBridgePlugin extends Plugin {
 	}
 
 	async loadSettings() {
-		this.settings = Object.assign(
-			{}, DEFAULT_SETTINGS, await this.loadData());
+		const data = await this.loadData() as Partial<CloudBridgeSettings>;
+		this.settings = Object.assign({}, DEFAULT_SETTINGS, data);
 	}
 
 	async saveSettings() {

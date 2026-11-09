@@ -41,7 +41,8 @@ export class ApiClient {
 		});
 		if (res.status >= 400) {
 			let msg = `${res.status}`;
-			try { msg = res.json?.detail || msg; } catch { /* html body */ }
+			const body = res.json as { detail?: string } | undefined;
+			if (body?.detail) msg = body.detail;
 			throw new Error(`API ${method} ${path} → ${msg}`);
 		}
 		return res.json as T;

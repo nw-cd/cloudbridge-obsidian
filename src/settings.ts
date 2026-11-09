@@ -52,8 +52,6 @@ export class CloudBridgeSettingTab extends PluginSettingTab {
 		containerEl.empty();
 		const s = this.plugin.settings;
 
-		new Setting(containerEl).setName("CloudBridge").setHeading();
-
 		new Setting(containerEl)
 			.setName("Server")
 			.setDesc("CloudBridge instance URL.")
@@ -160,7 +158,7 @@ export class CloudBridgeSettingTab extends PluginSettingTab {
 
 		new Setting(containerEl)
 			.setName("Sync hidden folders")
-			.setDesc("Include .obsidian config and other dot-folders. Off by default — safer.")
+			.setDesc(`Include the ${this.app.vault.configDir} config folder and other dot-folders. Off by default — safer.`)
 			.addToggle((t) => t.setValue(s.includeHidden)
 				.onChange(async (v) => {
 					s.includeHidden = v;
