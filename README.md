@@ -9,6 +9,23 @@ Sync your Obsidian vault to **any cloud** — Yandex Disk, Google Drive, VK Clou
 - **Cloud attachments** — one command uploads a note's images/files to your cloud and rewrites embeds to public CloudBridge links
 - **Status bar** — sync progress and last-sync time at a glance
 
+## Installation
+
+**Via BRAT (recommended while the plugin is under community review):**
+
+1. Install the **BRAT** plugin: Settings → Community plugins → Browse → search «Obsidian42 - BRAT» → Install → Enable.
+2. Open the command palette → **BRAT: Add a beta plugin for testing**.
+3. Paste `nw-cd/cloudbridge-obsidian` → Add Plugin.
+4. Enable **CloudBridge** in Settings → Community plugins.
+
+BRAT tracks GitHub releases — updates arrive automatically.
+
+**Manual:**
+
+1. Download `main.js`, `manifest.json`, `styles.css` from the [latest release](https://github.com/nw-cd/cloudbridge-obsidian/releases/latest).
+2. Create `<vault>/.obsidian/plugins/cloudbridge/` and copy the three files in.
+3. Reload Obsidian → Settings → Community plugins → enable **CloudBridge**.
+
 ## Setup
 
 1. In CloudBridge → **Dashboard → API** create an API key (`cb_live_…`). Requires the API add-on.
