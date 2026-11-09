@@ -40,7 +40,7 @@ export default class CloudBridgePlugin extends Plugin {
 		}
 
 		this.registerInterval(window.setInterval(() => {
-			if (this.due()) this.sync.run("timer");
+			if (this.due()) void this.sync.run("timer");
 		}, 30_000));
 	}
 

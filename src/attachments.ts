@@ -1,4 +1,4 @@
-import { Notice, normalizePath } from "obsidian";
+import { Notice } from "obsidian";
 import type CloudBridgePlugin from "./main";
 import { DavClient } from "./dav";
 import { ApiClient } from "./api";
