@@ -1,0 +1,10 @@
+{
+	"id": "cloudbridge",
+	"name": "CloudBridge",
+	"version": "1.0.0",
+	"minAppVersion": "1.5.0",
+	"description": "Sync your vault to any of 20+ clouds — Yandex Disk, Google Drive, VK Cloud, Dropbox, Telegram and more — through your CloudBridge account.",
+	"author": "CloudBridge",
+	"authorUrl": "https://cloud-bridge.ru",
+	"isDesktopOnly": false
+}

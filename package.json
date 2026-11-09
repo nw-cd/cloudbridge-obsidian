@@ -1,0 +1,28 @@
+{
+	"name": "obsidian-cloudbridge",
+	"version": "1.0.0",
+	"description": "Sync Obsidian vault to any cloud via CloudBridge",
+	"main": "main.js",
+	"scripts": {
+		"dev": "node esbuild.config.mjs",
+		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production"
+	},
+	"keywords": [
+		"obsidian",
+		"cloud",
+		"sync",
+		"webdav",
+		"yandex",
+		"google drive"
+	],
+	"license": "MIT",
+	"devDependencies": {
+		"@types/node": "^20.11.0",
+		"builtin-modules": "^3.3.0",
+		"esbuild": "^0.20.0",
+		"linkedom": "^0.18.15",
+		"obsidian": "^1.5.7",
+		"tslib": "^2.6.2",
+		"typescript": "^5.4.0"
+	}
+}
