@@ -1,6 +1,6 @@
 {
 	"name": "obsidian-cloudbridge",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Sync Obsidian vault to any cloud via CloudBridge",
 	"main": "main.js",
 	"scripts": {

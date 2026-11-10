@@ -237,19 +237,21 @@ export class SyncEngine {
 			await this.downloadAs(dav, remotePath, conflictCopy(localPath));
 		// falls through
 		case "up": {
+			// state must describe the version actually uploaded — stat
+			// BEFORE reading: an autosave racing the PUT must not turn
+			// into a phantom rChanged→conflict on the next run
+			const pre = await adapter.stat(localPath);
 			const data = await adapter.readBinary(localPath);
 			const dir = remotePath.split("/").slice(0, -1).join("/");
 			if (dir !== root) await dav.ensureDir(dir);
 			await dav.put(remotePath, data);
-			const st = await adapter.stat(localPath);
 			// real remote mtime (second-granular) — keeps rChanged exact
 			const re = await dav.stat(remotePath).catch(() => null);
-			if (st) {
-				s.syncState[a.path] = {
-					mtime: st.mtime, size: st.size,
-					remote_mtime: re?.mtime || Date.now(),
-				};
-			}
+			s.syncState[a.path] = {
+				mtime: pre?.mtime || Date.now(),
+				size: data.byteLength,
+				remote_mtime: re?.mtime || Date.now(),
+			};
 			break;
 		}
 		case "conflict-down": {
