@@ -11,20 +11,22 @@ Sync your Obsidian vault to **any cloud** — Yandex Disk, Google Drive, VK Clou
 
 ## Installation
 
-**Via BRAT (recommended while the plugin is under community review):**
+**From the official directory (recommended):**
 
-1. Install the **BRAT** plugin: Settings → Community plugins → Browse → search «Obsidian42 - BRAT» → Install → Enable.
-2. Open the command palette → **BRAT: Add a beta plugin for testing**.
-3. Paste `nw-cd/cloudbridge-obsidian` → Add Plugin.
-4. Enable **CloudBridge** in Settings → Community plugins.
-
-BRAT tracks GitHub releases — updates arrive automatically.
+Settings → Community plugins → Browse → search «CloudBridge» → Install → Enable. Plugin page: [community.obsidian.md/plugins/cloudbridge](https://community.obsidian.md/plugins/cloudbridge).
 
 **Manual:**
 
 1. Download `main.js`, `manifest.json`, `styles.css` from the [latest release](https://github.com/nw-cd/cloudbridge-obsidian/releases/latest).
 2. Create `<vault>/.obsidian/plugins/cloudbridge/` and copy the three files in.
 3. Reload Obsidian → Settings → Community plugins → enable **CloudBridge**.
+
+**Via BRAT (for beta builds):**
+
+1. Install the **BRAT** plugin: Settings → Community plugins → Browse → search «Obsidian42 - BRAT» → Install → Enable.
+2. Open the command palette → **BRAT: Add a beta plugin for testing**.
+3. Paste `nw-cd/cloudbridge-obsidian` → Add Plugin.
+4. Enable **CloudBridge** in Settings → Community plugins.
 
 ## Setup
 
