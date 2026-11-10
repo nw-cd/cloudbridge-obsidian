@@ -69,3 +69,41 @@ Symlink into a vault for local testing:
 ln -s <repo>/obsidian-plugin "<vault>/.obsidian/plugins/cloudbridge"
 # reload Obsidian → Community plugins → enable CloudBridge
 ```
+
+---
+
+# CloudBridge — синхронизация хранилища с любым облаком
+
+Синхронизируйте хранилище Obsidian с **любым облаком** — Яндекс Диск,
+Google Drive, VK Облако, Dropbox, Telegram, MEGA и ещё 13+ хранилищами —
+через ваш аккаунт [CloudBridge](https://cloud-bridge.ru).
+Одно хранилище — облако на ваш выбор.
+
+## Возможности
+
+- **Двусторонняя синхронизация** — правки, сделанные в облаке
+  (на другом устройстве или в другом Obsidian), возвращаются в хранилище
+- **Защита от конфликтов** — если файл изменён с двух сторон, побеждает
+  свежая версия, а вторая сохраняется как `имя.conflict-<время>.md`
+- **Облачные вложения** — одна команда заливает картинки заметки в облако
+  и заменяет вставки на публичные ссылки CloudBridge
+- **Статус-бар** — прогресс синхронизации и время последней проверки
+
+## Установка
+
+Из официального каталога: Settings → Community plugins → Browse →
+поиск «CloudBridge» → Install → Enable. Страница плагина:
+[community.obsidian.md/plugins/cloudbridge](https://community.obsidian.md/plugins/cloudbridge).
+
+## Настройка
+
+1. В CloudBridge → **Кабинет → API** создайте ключ `cb_live_…`
+   (нужна опция API-доступа).
+2. В настройках плагина вставьте ключ, нажмите **Fetch clouds**,
+   выберите облако.
+3. Запустите **CloudBridge: Sync vault now** из палитры команд
+   или иконкой облака на панели.
+
+Хранилище зеркалируется в папку `Obsidian/` в корне облака. Откройте
+ту же папку во втором Obsidian — и синхронизация заработает между
+устройствами.
